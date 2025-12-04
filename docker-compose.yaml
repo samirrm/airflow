@@ -74,13 +74,13 @@ x-airflow-common:
     AIRFLOW_CONFIG: '/opt/airflow/config/airflow.cfg'
   volumes:
     - ${AIRFLOW_PROJ_DIR:-.}/dags:/opt/airflow/dags
-    - ${AIRFLOW_PROJ_DIR:-.}/dags/connectia-ds:/opt/airflow/dags/connectia-ds
+    - ${AIRFLOW_PROJ_DIR:-.}/dags/projetos:/opt/airflow/dags/projetos
     - ${AIRFLOW_PROJ_DIR:-.}/logs:/opt/airflow/logs
     - ${AIRFLOW_PROJ_DIR:-.}/config:/opt/airflow/config
     - ${AIRFLOW_PROJ_DIR:-.}/plugins:/opt/airflow/plugins
       #- /mnt/airflow-dev/:/opt/airflow/files/
       
-  user: "${AIRFLOW_UID:-cyberark01}:0"
+  user: "${AIRFLOW_UID:-<MEU_USER_SERVER_AQUI>}:0"
   depends_on:
     &airflow-common-depends-on
     redis:
